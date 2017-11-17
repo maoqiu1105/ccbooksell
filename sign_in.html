@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+	<title>Sign in Page</title>
+</head>
+
+<body>
+	<div id="sign_in_frm">
+	
+		<form action="sign_in_process.php" method="post">
+			<p>
+				<label>Username:</label>
+				<input type="text" id="username" name="username"></input>
+			</p>	
+			
+			<p>
+				<label>Password:</label>
+				<input type="text" id="first_password" name="first_password"></input>
+			</p>
+			
+			<p>
+				<label>Password Confirmation</label>
+				<input type="text" id="second_password" name="second_password">
+			
+			<p>
+				<input type="submit" id="btn" value="Sign in"></input>
+			</p>
+		</form>
+	
+		<input type="button" onclick="window.location='index.html'" value="Home">
+		
+	</div>
+</body>

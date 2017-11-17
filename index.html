@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ccbooksell</title>
+	<script src="checkdata.js"></script>
+</head>
+<body>
+	<!--search the book by book name or book category-->
+	<form action="book_list.php" method="get" name="search" onsubmit="return ValidateForm()">
+		<input type="text" name="book_name" placeholder="book name or book ISBN" style="width: 300px"><br>
+		<select name="category_name">
+			<option value="">please select your category</option>
+			<option value="Art & Photography">Art & Photography</option>
+			<option value="Biographies & Memoirs">Biographies & Memoirs</option>
+			<option value="Children' 's Books">Children's Books</option>
+		</select><br>
+		<input type="submit" value="Search">
+		<p id="error_message"></p>
+	</form>
+	
+	<div>
+		<button type="button" onclick="window.location='sign_in.html' ">Sign in</button>
+		<button type="button" onclick="window.location='login.html'">Login</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+version 1.3
+	
+	create sign_in_validation.php
+	hanxiang
+	11/10/2017
+
+version 1.4
+
+	create insert function in sign_in_validation.php
+	hanxiangli
+	11/10/2017
+
+	!issue!
+		can not insert sign in infomation into the seller table, issued with foreign key and constraint 
+
+			:Cannot add or update a child row: a foreign key constraint fails
+			 (`kwbooksell`.`tblseller`, CONSTRAINT `tblseller_fk_tblbook` FOREIGN KEY (`book_ID`) 				REFERENCES `tblbook` (`book_ID`))
+
+	QW: try to change the setting of book_id in tblseller (delete NOT NULL), Not sure it works or not.
+
+NOV.13 2017
+	QW: trying to finish the table in book_list.php. I have created the table, but failed the css file in book list table.
+
+NOV.16 2017
+	QW: index.html: 1.add js file to check the data validation
+					2.add placeholder in search bar
+					3.change the location of search bar and category selection
+					4.add p tag to display error message after search button
+		book_list.php: 1.add search bar, login button and sign in button
+					   2.add a condition to check the user input whatever name or category
+					   3.add footer
+					   4.add href at book name 
+		book_detail.php: 1.search the data by book name. was success, but still have access problem.
