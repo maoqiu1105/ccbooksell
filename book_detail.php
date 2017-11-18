@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>
-		<!--set up page title by book name-->
+		
 		<?php
 		$book_name=$_GET["book_name"];
 		echo $book_name." -  detail";
@@ -35,7 +35,7 @@
 	<?php
 		include("connect.php");
 		$book_name=$_GET["book_name"];
-		$sql="SELECT book_ID, book_Name, category_Name, book_ISBN, book_Price, date_Post, seller_Name, seller_Email_Address FROM tblcategory
+		$sql="SELECT book_ID, book_Name, category_Name, book_ISBN, book_Price, date_Post, seller_Name, seller_Email_Address,book_Img FROM tblcategory
 					JOIN tblbook 
     					ON tblcategory.category_ID = tblbook.book_Category_ID
 					JOIN tblseller 
@@ -52,6 +52,8 @@
 		    	"book ISBN: ".$row["book_ISBN"]."<br>".
 				"book price: ".$row["book_Price"]."<br>".
 				"post date: ".$row["date_Post"]."<br>".
+				
+				//$row["book_Img"].
 			"</fieldset>";
 		echo
 			//display the seller contact information
