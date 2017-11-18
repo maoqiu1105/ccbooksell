@@ -1,5 +1,4 @@
 <?php
 	echo "success";
-	echo "wangqiaoaaaaaa";
-	sdnhaiuosdhadiuah
+	echo "xxx";
 ?>
