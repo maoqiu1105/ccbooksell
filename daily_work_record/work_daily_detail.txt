@@ -31,3 +31,8 @@ NOV.16 2017
 					   3.add footer
 					   4.add href at book name 
 		book_detail.php: 1.search the data by book name. was success, but still have access problem.
+NOV.17 2017
+	QW: update and upload login and sign in pages made by HX;
+		add book_detail.php page;
+		Brad properly gonna help us to do the css file;
+	Q:how to make the shared page for each page(search button and footer)

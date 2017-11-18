@@ -29,6 +29,8 @@
 			<button type="button" onclick="window.location='login.html'">Login</button>
 		</div>
 	</header>
+	<!-- line to divide the search bar and searched book list -->
+	<hr>
 	<!--book detail go here-->
 	<?php
 		include("connect.php");
@@ -65,6 +67,9 @@
 		//close the database connection 
 		$conn->close();
 	?>
+
+	<!-- line to divide the footer  -->
+	<hr>
 	<footer>
 		<a href="index.html">home</a>
 	</footer>

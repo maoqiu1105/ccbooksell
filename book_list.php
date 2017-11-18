@@ -9,27 +9,27 @@
 		<!-- search bar -->
 		<header style="height: 30px">
 			<div style="float: left;">
-			<form action="book_list.php" method="get" name="search" onsubmit="return ValidateForm()">
-				<input type="text" name="book_name">
-				<select name="category_name">
-					<option value="">please select your category</option>
-					<option value="Art & Photography">Art & Photography</option>
-					<option value="Biographies & Memoirs">Biographies & Memoirs</option>
-					<option value="Children' 's Books">Children's Books</option>
-				</select>
-				<input type="submit" value="Search">
-			</form>
-		</div>
-		<div style="float: right;">
-			<button type="button" onclick="window.location='sign_in.html'">Sign in</button>
-			<button type="button" onclick="window.location='login.html'">Login</button>
-		</div>
+				<form action="book_list.php" method="get" name="search" onsubmit="return ValidateForm()">
+					<input type="text" name="book_name">
+					<select name="category_name">
+						<option value="">please select your category</option>
+						<option value="Art & Photography">Art & Photography</option>
+						<option value="Biographies & Memoirs">Biographies & Memoirs</option>
+						<option value="Children' 's Books">Children's Books</option>
+					</select>
+					<input type="submit" value="Search">
+				</form>
+			</div>
+			<div style="float: right;">
+				<button type="button" onclick="window.location='sign_in.html'">Sign in</button>
+				<button type="button" onclick="window.location='login.html'">Login</button>
+			</div>
 		</header>
 		<!--error message cuz the text inout or category selection is blank -->
 		<p id="error_message"></p>
 		<!-- line to divide the search bar and searched book list -->
 		<hr>
-		<h1>you searched: </h1>
+		<h1>you searched by </h1>
 		<p>
 			<?php 
 				if ($_GET["book_name"] != null) {
@@ -103,6 +103,7 @@
 			</table>
 			
 		</div>
+		<!-- line to divide the footer  -->
 		<hr>
 		<footer>
 			<a href="index.html">home</a>
