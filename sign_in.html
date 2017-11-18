@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Sign in Page</title>
-	<script src="checkdata.js?v=1.1"></script>
+	<script src="checkdata.js?v=1.2"></script>
 	<!--https://www.youtube.com/watch?v=Pz5CbLqdGwM-->
 </head>
 <body>
@@ -30,7 +30,7 @@
 	<!-- line to divide the search bar and searched book list -->
 	<hr>
 	<div id="sign_in_frm">
-		<form action="sign_in_process.php" method="post" name="sign_in_form" onsubmit="return ValidatePassword()">
+		<form onsubmit="return ValidatePassword()" action="sign_in_process.php" method="post" name="sign_in_form">
 			<!-- regisiter username-->
 			<label>Username:</label>
 			<input type="text" id="username" name="username">

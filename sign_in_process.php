@@ -1,5 +1,6 @@
-<?php
 
+	<?php
+	
 	include('connect.php');
 
 /*get user input name from submited form*/
@@ -104,6 +105,10 @@ ref:https://www.w3schools.com/php/php_form_url_email.asp
 			echo "Error: ".$sql."<br>".$conn->error;
 		}
 	}
-	
 	$conn->close();
 ?>
+
+
+
+
+
