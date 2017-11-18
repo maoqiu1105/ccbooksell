@@ -5,7 +5,7 @@ function ValidateForm() {
 		document.getElementById('error_message').innerHTML = "Sorry, we need book name or category.";
 		return false;
 	}
-};
+}
 
 function ValidatePassword(){
 	var fisrt_password = document.getElementByName('fisrt_password').value;
