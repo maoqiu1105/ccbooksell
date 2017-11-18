@@ -3,6 +3,7 @@
 <head>
 	<title>Sign in Page</title>
 	<script src="checkdata.js?v=1.1"></script>
+	<!--https://www.youtube.com/watch?v=Pz5CbLqdGwM-->
 </head>
 <body>
 	<!-- search bar -->
@@ -32,27 +33,28 @@
 		<form action="sign_in_process.php" method="post" name="sign_in_form" onsubmit="return ValidatePassword()">
 			<!-- regisiter username-->
 			<label>Username:</label>
-			<input type="text" id="username" name="username"></input>
+			<input type="text" id="username" name="username">
 			<br><br>
 			<!-- regisiter email address-->
 			<label>Email Address:</label>
-			<input type="text" id="email_address" name="email_address"></input>
+			<input type="text" id="email_address" name="email_address">
 			<br><br>
 			<!-- regisiter phone number-->
 			<label>Phone number(optional):</label>
-			<input type="text" id="phone_number" name="phone_number"></input>
+			<input type="text" id="phone_number" name="phone_number">
 			<br><br>
 			<!-- input password-->
 			<label>Password:</label>
-			<input type="text" id="first_password" name="first_password"></input>
+			<input type="text" id="first_password" name="first_password">
 			<br><br>
 			<!--confirm password-->
 			<label>Password Confirmation:</label>
 			<input type="text" id="second_password" name="second_password">
-			<p id="password_error_message"></p>
+			
 			<br><br>
-			<input type="submit" value="Sign in"></input>
+			<input type="submit" value="Sign in">
 		</form>
+		<p id="password_error_message"></p>
 	</div>
 	<!-- line to divide the footer  -->
 	<hr>
