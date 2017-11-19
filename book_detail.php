@@ -1,10 +1,14 @@
+<?
+	session_start();
+	$book_id=$_GET["book_id"];
+	$book_name=$_GET["book_name"];
+?>
 <!DOCTYPE html>
 <html>
 <head>
+		<script src="checkdata.js"></script>
 	<title>
-		
 		<?php
-		$book_name=$_GET["book_name"];
 		echo $book_name." -  detail";
 		?>
 	</title>
@@ -29,18 +33,19 @@
 			<button type="button" onclick="window.location='login.html'">Login</button>
 		</div>
 	</header>
+	<!--error message cuz the text inout or category selection is blank -->
+	<p id="error_message"></p>
 	<!-- line to divide the search bar and searched book list -->
 	<hr>
 	<!--book detail go here-->
 	<?php
 		include("connect.php");
-		$book_name=$_GET["book_name"];
-		$sql="SELECT book_ID, book_Name, category_Name, book_ISBN, book_Price, date_Post, seller_Name, seller_Email_Address,book_Img FROM tblcategory
+		$sql="SELECT book_ID, book_Name, category_Name, book_ISBN, book_Price, date_Post, seller_Name, seller_Email_Address FROM tblcategory
 					JOIN tblbook 
     					ON tblcategory.category_ID = tblbook.book_Category_ID
 					JOIN tblseller 
     					ON tblbook.seller_ID = tblseller.seller_ID
-					WHERE book_Name = '".$book_name."'";
+					WHERE book_ID='".$book_id."';";
 		$result=$conn->query($sql);
 		$row = $result->fetch_assoc();
 		echo 
@@ -52,8 +57,7 @@
 		    	"book ISBN: ".$row["book_ISBN"]."<br>".
 				"book price: ".$row["book_Price"]."<br>".
 				"post date: ".$row["date_Post"]."<br>".
-				
-				//$row["book_Img"].
+				"book image: <img src=getimage.php?book_id=".$book_id.">".
 			"</fieldset>";
 		echo
 			//display the seller contact information

@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -62,7 +65,7 @@
     								ON tblcategory.category_ID = tblbook.book_Category_ID
 								JOIN tblseller 
     								ON tblbook.seller_ID = tblseller.seller_ID
-								WHERE category_Name = '".$category_name."'";
+								WHERE category_Name = '".$category_name."';";
 					}
 					else{
 						$sql = "SELECT book_ID, book_Name, category_Name, book_ISBN, book_Price, date_Post, seller_Name FROM tblcategory
@@ -70,7 +73,7 @@
     								ON tblcategory.category_ID = tblbook.book_Category_ID
 								JOIN tblseller 
     								ON tblbook.seller_ID = tblseller.seller_ID
-								WHERE book_Name LIKE '%".$book_name."%'";
+								WHERE book_Name LIKE '%".$book_name."%';";
 					}
 					$result = $conn->query($sql);
 					if ($result->num_rows > 0) 
@@ -85,7 +88,7 @@
 								echo 
 								"<tr>".
 									"<td>". 
-									"<a href='book_detail.php?book_name=".$row["book_Name"]."'>".$row["book_Name"]. "</a>".
+									"<a href='book_detail.php?book_id=".$row["book_ID"]."&book_name=".$row["book_Name"]."'>".$row["book_Name"]. "</a>".
 									"</td>".
 									"<td>". $row["category_Name"]. "</td>".
 									"<td>". $row["book_Price"]. "</td>".
