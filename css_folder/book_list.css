@@ -1,5 +1,7 @@
 table {
-	border-collapse: collapse;}
+	border-collapse: collapse;
+	margin: 20px 20px 20px 100px;
+}
 
 table td, table th {
 	border: 1px solid #ddd;

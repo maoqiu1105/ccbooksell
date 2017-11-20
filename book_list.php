@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php
 	session_start();
 ?>
@@ -5,7 +6,8 @@
 <html>
 	<head>
 		<title>book list</title>
-		<link rel="stylesheet" type="text/css" href="./css_folder/book_list_table.css">
+		<link rel="stylesheet" type="text/css" href="./css_folder/book_list.css">
+		<link rel="stylesheet" type="text/css" href="./css_folder/shared.css">
 		<script src="checkdata.js"></script>
 	</head>
 	<body>
@@ -109,7 +111,7 @@
 		<!-- line to divide the footer  -->
 		<hr>
 		<footer>
-			<a href="index.html">home</a>
+			<a href="index.html">Home</a>
 		</footer>
 	</body>
 </html>

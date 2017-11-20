@@ -1,8 +1,10 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!DOCTYPE html>
 <html>
 <head>
 	<script src="checkdata.js"></script>
-	<link rel="stylesheet" type="text/css" href="./css_folder/book_detail_table.css">
+	<link rel="stylesheet" type="text/css" href="./css_folder/book_detail.css">
+	<link rel="stylesheet" type="text/css" href="./css_folder/shared.css">
 	<title>
 		<?php
 			$book_id=$_GET["book_id"];
@@ -17,7 +19,7 @@
 		<div style="float: left;">
 			<form action="book_list.php" method="get" name="search" onsubmit="return ValidateForm()">
 				<input type="text" name="book_name">
-				<select name="category_name">
+				<select name="category_name" style="height: 200%">
 					<option value="">please select your category</option>
 					<option value="Art & Photography">Art & Photography</option>
 					<option value="Biographies & Memoirs">Biographies & Memoirs</option>
@@ -25,6 +27,7 @@
 				</select>
 				<input type="submit" value="Search">
 			</form>
+	
 		</div>
 		<div style="float: right;">
 			<button type="button" onclick="window.location='sign_in.html'">Sign in</button>
@@ -32,11 +35,12 @@
 		</div>
 	</header>
 	<!--error message cuz the text inout or category selection is blank -->
-	<p id="error_message"></p>
+	<p id="error_message" style="color:red"></p>
 	<!-- line to divide the search bar and searched book list -->
 	<hr>
 	<!-- select data from database -->
-	<?php
+	<div id="main">
+		<?php
 		include("connect.php");
 		$sql="SELECT book_ID, book_Name, category_Name, book_ISBN, book_Price, date_Post, seller_Name, seller_Email_Address FROM tblcategory
 					JOIN tblbook 
@@ -46,14 +50,16 @@
 					WHERE book_ID='".$book_id."';";
 		$result=$conn->query($sql);
 		$row = $result->fetch_assoc();
+		echo	
+			//display the book image
+			"<img src=getimage.php?book_id=".$book_id.">";
 	?>
 	<!--book detail go here-->
 	<fieldset>
 		<legend>book detail</legend>
 		<?php
-			echo 
-				//display book detail information
-				"<table id='book_detail_table'>
+			echo //display book detail information
+				"<table id=book_detail>
 					<tr>
 						<td>book name:</td>
 						<td>".$row["book_Name"]."</td>
@@ -73,12 +79,8 @@
 						<td>post date</td>
 						<td>".$row["date_Post"]."</td>
 					</tr>
-				</table>".
-				"<div>
-					<p>book image: </p>
-					<img src=getimage.php?book_id=".$book_id.">
-				</div>";
-				
+				</table>";
+			
 		?>
 	</fieldset>
 	<fieldset>
@@ -88,17 +90,20 @@
 				//display the seller contact information
 				"seller name: ".$row["seller_Name"]."<br>".
 				"seller email: ". 
-				"<a href='mailto:".$row["seller_Email_Address"]."'>".
-				$row["seller_Email_Address"].
+				"<a href='mailto:".$row["seller_Email_Address"]."'>contact me </a>".
 				"<br>";
 			//close the database connection 
 			$conn->close();
 		?>
 	</fieldset>
-	<!-- line to divide the footer  -->
-	<hr>
+
+	</div>
+	
+
 	<footer>
-		<a href="index.html">home</a>
+		<!-- line to divide the footer  -->
+		<hr>
+		<p><a href="index.html">Home</a></p>
 	</footer>
 </body>
 </html>
