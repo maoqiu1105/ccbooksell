@@ -3,29 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./css_folder/shared.css">
+	<link rel="stylesheet" type="text/css" href="./css_folder/login.css">
 	<title>Login Page</title>
 </head>
 
 <body>
 	<div id="login_frm">
-	
 		<form action="seller_page.php" method="post">
-			<p>
-				<label>Email Address:</label>
-				<input type="text" id="email_address" name="email_address"></input>
-			</p>
-			
-			<p>
-				<label>Password:</label>
-				<input type="text" id="password" name="password"></input>
-			</p>
-			
-			<p>
-				<input type="submit" id="btn" value="Enter"></input>
-			</p>
+			<!--email address input-->
+			<label>Email Address:</label>
+			<input type="text" id="email_address" name="email_address"></input><br><br>
+			<!--password input-->
+			<label>Password:</label>
+			<input type="text" id="password" name="password"></input><br><br>
+			<input type="submit" id="btn" value="Login"></input>
 		</form>
-		
-		<input type="button" onclick="window.location='index.html'" value="Home">
-	
 	</div>
+	<footer>
+		<hr>
+		<a href="index.html">Home</a>
+	</footer>
 </body>
