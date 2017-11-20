@@ -1,6 +1,5 @@
 
 	<?php
-	session_start();
 /*
 	$_SESSION['email'] = $_POST['email_address'];
 	$_SESSION['name'] = $_POST['sellername'];

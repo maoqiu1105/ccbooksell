@@ -7,7 +7,6 @@
 		<link rel="stylesheet" type="text/css" href="./css_folder/shared.css">
 		<script src="checkdata.js"></script>
 		<title>book list</title>
-
 	</head>
 	<body>
 		<!-- search bar -->
