@@ -1,14 +1,13 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<?php
-	session_start();
-?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>book list</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="./css_folder/book_list.css">
 		<link rel="stylesheet" type="text/css" href="./css_folder/shared.css">
 		<script src="checkdata.js"></script>
+		<title>book list</title>
+
 	</head>
 	<body>
 		<!-- search bar -->
