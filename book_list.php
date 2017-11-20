@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<title>book list</title>
-		<link rel="stylesheet" type="text/css" href="./css_folder/book_list.css">
+		<link rel="stylesheet" type="text/css" href="./css_folder/book_list_table.css">
 		<script src="checkdata.js"></script>
 	</head>
 	<body>

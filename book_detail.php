@@ -1,14 +1,12 @@
-<?
-	session_start();
-	$book_id=$_GET["book_id"];
-	$book_name=$_GET["book_name"];
-?>
 <!DOCTYPE html>
 <html>
 <head>
-		<script src="checkdata.js"></script>
+	<script src="checkdata.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css_folder/book_detail_table.css">
 	<title>
 		<?php
+			$book_id=$_GET["book_id"];
+			$book_name=$_GET["book_name"];
 		echo $book_name." -  detail";
 		?>
 	</title>
@@ -37,7 +35,7 @@
 	<p id="error_message"></p>
 	<!-- line to divide the search bar and searched book list -->
 	<hr>
-	<!--book detail go here-->
+	<!-- select data from database -->
 	<?php
 		include("connect.php");
 		$sql="SELECT book_ID, book_Name, category_Name, book_ISBN, book_Price, date_Post, seller_Name, seller_Email_Address FROM tblcategory
@@ -48,32 +46,55 @@
 					WHERE book_ID='".$book_id."';";
 		$result=$conn->query($sql);
 		$row = $result->fetch_assoc();
-		echo 
-			//display book detail information
-			"<fieldset>".
-				"<legend>book detail</legend>".
-				"book name: ".$row["book_Name"]."<br>".
-				"book category: ".$row["category_Name"]."<br>".
-		    	"book ISBN: ".$row["book_ISBN"]."<br>".
-				"book price: ".$row["book_Price"]."<br>".
-				"post date: ".$row["date_Post"]."<br>".
-				"book image: <img src=getimage.php?book_id=".$book_id.">".
-			"</fieldset>";
-		echo
-			//display the seller contact information
-			"<fieldset>".
-				"<legend>seller contact information</legend>".
+	?>
+	<!--book detail go here-->
+	<fieldset>
+		<legend>book detail</legend>
+		<?php
+			echo 
+				//display book detail information
+				"<table id='book_detail_table'>
+					<tr>
+						<td>book name:</td>
+						<td>".$row["book_Name"]."</td>
+					</tr>
+					<tr>
+						<td>book category:</td>
+						<td>".$row["category_Name"]."</td>
+					</tr>
+					<tr>
+						<td>book ISBN:</td>
+						<td>".$row["book_ISBN"]."</td>
+					</tr>
+					<tr>
+						<td>book price:</td>
+						<td>".$row["book_Price"]."</td>
+					</tr>
+						<td>post date</td>
+						<td>".$row["date_Post"]."</td>
+					</tr>
+				</table>".
+				"<div>
+					<p>book image: </p>
+					<img src=getimage.php?book_id=".$book_id.">
+				</div>";
+				
+		?>
+	</fieldset>
+	<fieldset>
+		<legend>seller contact information</legend>
+		<?php
+			echo
+				//display the seller contact information
 				"seller name: ".$row["seller_Name"]."<br>".
 				"seller email: ". 
 				"<a href='mailto:".$row["seller_Email_Address"]."'>".
 				$row["seller_Email_Address"].
-				"<br>".
-			"</fieldset>";
-
-		//close the database connection 
-		$conn->close();
-	?>
-
+				"<br>";
+			//close the database connection 
+			$conn->close();
+		?>
+	</fieldset>
 	<!-- line to divide the footer  -->
 	<hr>
 	<footer>
