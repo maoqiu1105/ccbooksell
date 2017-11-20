@@ -3,18 +3,8 @@
 
 include ('connect.php');
 
-$user_email = $_POST['email_address'];
-$user_password = $_POST['password'];
-
-//get off sql interjections attack with specal symbol//
-//$user_email = stripcslashes($user_email);
-//$user_password = stripcslashes($user_password);
-//$user_email = mysqli_real_escape_string($user_email);
-//$user_password = mysqli_real_escape_string($user_password);
-
-			//	or die("Sorry failed to login : ". mysql_error());//
-
-//query the database for user//
+$user_email = $mysqli->escape_string($_POST['email_address']);  
+$user_password = $mysqli->escape_string(password_hash($_POST['password'], PASSWORD_BCRYPT));
 
 $sql = "select * from tblseller where 
 	seller_Email_Address = '".$user_email."' AND seller_Password = '".$user_password."'";	

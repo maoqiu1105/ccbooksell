@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.5
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2017 at 06:46 PM
--- Server version: 5.7.20
--- PHP Version: 7.1.7
+-- Generation Time: Nov 20, 2017 at 01:10 AM
+-- Server version: 10.1.22-MariaDB
+-- PHP Version: 7.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -78,16 +78,20 @@ CREATE TABLE `tblseller` (
   `seller_Password` varchar(45) NOT NULL,
   `seller_Name` varchar(45) NOT NULL,
   `seller_Phone_Number` varchar(10) DEFAULT NULL,
-  `seller_Email_Address` varchar(45) NOT NULL
+  `seller_Email_Address` varchar(45) NOT NULL,
+  `hash` varchar(32) CHARACTER SET latin1 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tblseller`
 --
 
-INSERT INTO `tblseller` (`seller_ID`, `seller_Password`, `seller_Name`, `seller_Phone_Number`, `seller_Email_Address`) VALUES
-(1, 'wangqiao', 'Kevin', '5197217729', 'wangqiao921105@gmail.com'),
-(2, 'lihanxiang', 'Hanxiang', NULL, 'hanxiangli97@gmail.com');
+INSERT INTO `tblseller` (`seller_ID`, `seller_Password`, `seller_Name`, `seller_Phone_Number`, `seller_Email_Address`, `hash`) VALUES
+(1, 'wangqiao', 'Kevin', '5197217729', 'wangqiao921105@gmail.com', ''),
+(2, 'lihanxiang', 'Hanxiang', NULL, 'hanxiangli97@gmail.com', ''),
+(3, '$2y$10$fXFuVp88z2dPUDFj.wuPr.lojG3rAtMEIXVID7', 'uuu', NULL, 'uuu@gmail.com', ''),
+(4, '$2y$10$HotF4Mlku4jY26lsO0hDRegEafnmpfdI2NX.4o', '', NULL, '', ''),
+(20, '$2y$10$Q5OK1Br0iD5LXeTVFZwB.enqehkoNus5xmWM8O', 'dwsadaw', NULL, 'dqwadssa@gmail.com', '');
 
 --
 -- Indexes for dumped tables
@@ -126,19 +130,16 @@ ALTER TABLE `tblseller`
 --
 ALTER TABLE `tblbook`
   MODIFY `book_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `tblcategory`
 --
 ALTER TABLE `tblcategory`
   MODIFY `category_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `tblseller`
 --
 ALTER TABLE `tblseller`
-  MODIFY `seller_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `seller_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- Constraints for dumped tables
 --
