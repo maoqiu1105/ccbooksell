@@ -1,63 +1,41 @@
 
-	<?php
-/*
-	$_SESSION['email'] = $_POST['email_address'];
-	$_SESSION['name'] = $_POST['sellername'];
-*/
-	include('connect.php');
+<?php
+		session_start();
+
+		$_SESSION['move'] = "sign_in";
+
+		include('connect.php');
 
 
-	$seller_name = $_POST['sellername'];
-	$seller_email_address = $conn->escape_string($_POST['email_address']); 
- 	$first_user_password = $conn->escape_string(password_hash($_POST['first_password'], PASSWORD_BCRYPT));
-	$second_user_password = $conn->escape_string(password_hash($_POST['second_password'], PASSWORD_BCRYPT));
-	$hash = $conn->escape_string( md5( rand(0,1000) ) );
-
-	$sql = "INSERT INTO tblseller(seller_Name,seller_Email_Address,seller_Password,seller_ID)
-				VALUES ('".$seller_name."','".$seller_email_address."','".$first_user_password."',Default)";
-	$result=$conn->query($sql);
+		$seller_name = $_POST['sellername'];
+		$seller_email_address = $conn->escape_string($_POST['email_address']); 
+	 	$first_user_password = $conn->escape_string(password_hash($_POST['first_password'], PASSWORD_BCRYPT));
+		$second_user_password = $conn->escape_string(password_hash($_POST['second_password'], PASSWORD_BCRYPT));
+		$hash = $conn->escape_string( md5( rand(0,1000) ) );
 
 
+		$sql = "INSERT INTO tblseller(seller_Name,seller_Email_Address,seller_Password,hash,seller_ID)
+					VALUES ('".$seller_name."','".$seller_email_address."','".$first_user_password."','".$hash."',Default)";
 
-	if ($result) {
-		echo "win";
-	}
-	else
-	{
-		echo $conn->error;
-	}
+		$result=$conn->query($sql);
 
+		if ($result) {
 
-// /*check email address is exist*/
-// 	$result = $conn->query("SELECT * FROM tblseller WHERE seller_Email_Address = '".$seller_email_address."'");
+			echo "win";
+			
+			$_SESSION['email'] = $_POST['email_address'];
+			$_SESSION['name'] = $_POST['sellername'];
+			$_SESSION['password'] = $first_user_password;
 
-// 	$row  = $result->fetch_assoc();
+			header("location: success.php");
+		}else{
 
-// 	if( $row->num_rows == 0 )
-// 	{
-// 		/*	if( $result->num_rows != 0 )
-// 	{
-// 		$_SESSION['message'] = 'User with this email already exists!';
-// 		header("location: error.php");
-// 	}	*/
-// 	/*else
-// 	{
-// allow to insert
-// */
-// 		$sql = "INSERT INTO tblseller(seller_Name,seller_Email_Address,seller_Password,seller_ID)
-// 				VALUES ('$user_name','$user_email_address','$first_user_password',Default)";	
-// 		if($conn->query($sql)=== TRUE)
-// 		{
-// 			echo "New record created successfully";
-// 			header("location : index.html");
-// 		}else{
-// 			echo "Error: ".$sql."<br>".$conn->error;
-// 			header("location: error.php");
-// 		}
-// 	}
-
-
-
+			$fail_msg = "failed to sign up, it might be the email address or the name has been taken, see the detail here : ";
+			$fail_msg .= $conn->error;
+			$_SESSION['error'] = $fail_msg;
+			
+			header("location: error.php");			
+		}
 
 	$conn->close();
 ?>

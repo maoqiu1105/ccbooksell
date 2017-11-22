@@ -1,20 +1,19 @@
 <?php
 
 	session_start();
+	$move = $_SESSION['move'];
+	$error_msg = $_SESSION['error'];
 
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title><?php  $move." "."error"?></title>
 </head>
 <body>
 	<p>
-		<?php		
-			$error_msg = $_SESSION['message'];
-			echo $error_msg;
-		?>	
+		<?php	echo $error_msg?>	
 	</p>	
 </body>
 </html>
