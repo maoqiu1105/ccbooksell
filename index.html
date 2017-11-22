@@ -3,26 +3,36 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./css_folder/shared.css">
+	<link rel="stylesheet" type="text/css" href="./css_folder/index.css">
 	<script src="checkdata.js"></script>
 	<title>ccbooksell</title>
 </head>
 <body>
-	<!--search the book by book name or book category-->
-	<form action="book_list.php" method="get" name="search" onsubmit="return ValidateForm()">
-		<input type="text" name="book_name" placeholder="book name or book ISBN" style="width: 300px"><br>
-		<select name="category_name">
-			<option value="">please select your category</option>
-			<option value="Art & Photography">Art & Photography</option>
-			<option value="Biographies & Memoirs">Biographies & Memoirs</option>
-			<option value="Children' 's Books">Children's Books</option>
-		</select><br>
-		<input type="submit" value="Search">
-		<p id="error_message"></p>
-	</form>
-	
+	<!-- search bar -->
+	<header style="height: 30px">
+		<div style="float: right;">
+			<button type="button" onclick="window.location='sign_in.html'">Sign in</button>
+			<button type="button" onclick="window.location='login.html'">Login</button>
+		</div>
+	</header>
+	<!-- line to divide the search bar and searched book list -->
+	<hr>
 	<div>
-		<button type="button" onclick="window.location='sign_in.html' ">Sign in</button>
-		<button type="button" onclick="window.location='login.html'">Login</button>
+		<!--search the book by book name or book category-->
+		<form action="book_list.php" method="get" name="search" onsubmit="return ValidateForm()" id="search_bar_form">
+			<h1 style="margin-left: 80px">CCBOOKSELL</h1>
+			<input type="text" name="book_name" placeholder="book name or book ISBN" style="width: 200px">
+			<select name="category_name">
+				<option value="">please select your category</option>
+				<option value="Art & Photography">Art & Photography</option>
+				<option value="Biographies & Memoirs">Biographies & Memoirs</option>
+				<option value="Children' 's Books">Children's Books</option>
+			</select><br><br>
+			<input type="submit" value="Search" id="search_button" >
+			<!-- display the error message-->
+			<p id="error_message"></p>
+		</form>
 	</div>
 	<!-- line to divide the footer  -->
 	<hr>

@@ -1,0 +1,13 @@
+#search_bar_form{
+	margin: 10px 200px 10px 300px;
+}
+
+#search_button{
+	margin-left: 150px;
+	text-align: center;
+	background-color: #f2f2f2;
+	padding:10px;
+	font-size: 10px;
+	box-sizing: border-box;
+}
+
