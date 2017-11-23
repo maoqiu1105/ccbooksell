@@ -6,14 +6,15 @@
 	<link rel="stylesheet" type="text/css" href="./css_folder/shared.css">
 	<link rel="stylesheet" type="text/css" href="./css_folder/index.css">
 	<script src="checkdata.js"></script>
+	
 	<title>ccbooksell</title>
 </head>
 <body>
 	<!-- search bar -->
 	<header style="height: 30px">
 		<div style="float: right;">
-			<button type="button" onclick="window.location='sign_in.html'">Sign in</button>
-			<button type="button" onclick="window.location='login.html'">Login</button>
+			<input type="image" src="css_folder/images/signin.png" onclick="window.location='sign_in.html'" />
+			<input type="image" src="css_folder/images/login.png" onclick="window.location='login.html'" />
 		</div>
 	</header>
 	<!-- line to divide the search bar and searched book list -->
@@ -21,7 +22,9 @@
 	<div>
 		<!--search the book by book name or book category-->
 		<form action="book_list.php" method="get" name="search" onsubmit="return ValidateForm()" id="search_bar_form">
-			<h1 style="margin-left: 80px">CCBOOKSELL</h1>
+				<a href="index.html">
+				<img src= "css_folder\images\ccbooksellLogo.png"/>
+				</a>
 			<input type="text" name="book_name" placeholder="book name or book ISBN" style="width: 200px">
 			<select name="category_name">
 				<option value="">please select your category</option>

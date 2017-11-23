@@ -2,6 +2,7 @@ body{
 	width: 1000px;
 	margin: auto;
 	display: block;
+	background-color: gray;
 }
 
 header{
@@ -24,4 +25,10 @@ a:active{
 footer{
 	clear: both;
 	margin: auto;
+}
+hr {
+	height: 10px;
+	background-color: #27a1ff;
+	border: #27a1ff;
+	
 }
