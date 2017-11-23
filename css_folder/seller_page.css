@@ -1,13 +1,21 @@
-table{
-	margin: 20px;
-	border-collapse: collapse;
+table {
+    margin: 20px 100px;
+    border-collapse: collapse;
+    float: left;
 }
 
-table td{
-	border:1px solid black;
-	padding: 8px;
+table td {
+    padding: 8px;
 }
 
-table tr:nth-child(even){background-color: #f2f2f2;}
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
 
-table tr:hover {background-color: #ddd;}
+table tr:hover {
+    background-color: #ddd;
+}
+
+.manage_book {
+    float: right;
+}
