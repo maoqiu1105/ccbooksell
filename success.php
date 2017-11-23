@@ -5,7 +5,7 @@
 
 	$move = $_SESSION['move'];
 	$sellername = $_SESSION['name'];
-	header("refresh:1; url=seller_page.php");
+	header("refresh:1; url=seller_profile.php");
 
 ?>
 

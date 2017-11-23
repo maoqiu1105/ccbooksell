@@ -1,12 +1,10 @@
-<?php
-	session_start();
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="./css_folder/seller_page.css">
+	<link rel="stylesheet" type="text/css" href="./css_folder/seller_profile.css">
 	<link rel="stylesheet" type="text/css" href="./css_folder/shared.css">
 	<script src="checkdata.js"></script>
 	<title>seller profile</title>
@@ -36,6 +34,7 @@
 	<!-- line to divide the search bar and searched book list -->
 	<hr>
 	<?php
+	session_start();
 	include('login_process.php');
 	while($row = $result -> fetch_assoc())
 		{
@@ -65,10 +64,9 @@
 						<tr><td>Post date : </td><td>".$book_row['date_Post']."</td></tr>
 					</table>
 					<div class='manage_book'>
-					<p><a href='edit.php'>Edit</a></p>
-					<p><a href='delete.php'>Delete</a></p>
-					</div>
-					";
+					<p><a href='edit_book.php'>Edit</a></p>
+					<p><a href=''>Delete</a></p>
+					</div>";
 				}
 			}
 			else {
