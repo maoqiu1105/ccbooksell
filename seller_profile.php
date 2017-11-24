@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,8 +32,8 @@
 	<p id="error_message"></p>
 	<!-- line to divide the search bar and searched book list -->
 	<hr>
+	<div class="main">
 	<?php
-	session_start();
 	include('login_process.php');
 	while($row = $result -> fetch_assoc())
 		{
@@ -63,17 +62,15 @@
 						<tr><td>Book Price : </td><td>".$book_row['book_Price']."</td></tr>
 						<tr><td>Post date : </td><td>".$book_row['date_Post']."</td></tr>
 					</table>
-					<div class='manage_book'>
-					<p><a href='edit_book.php'>Edit</a></p>
-					<p><a href=''>Delete</a></p>
-					</div>";
+					<p id='manage_book'><button onclick=''>Add 	</a><a href='edit_book.php'>Edit </a><a href=''>Delete </a></p>";
 				}
 			}
 			else {
 				echo "your don't have any book here, do you want to add book?";
 			}
 		}
-	?>
+	?>	
+	</div>
 	<footer>
 		<!-- line to divide the footer  -->
 		<hr>	

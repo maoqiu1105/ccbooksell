@@ -1,7 +1,10 @@
+.main{
+	margin: 20px;
+}
+
 table {
     margin: 20px 100px;
     border-collapse: collapse;
-    float: left;
 }
 
 table td {
@@ -16,6 +19,6 @@ table tr:hover {
     background-color: #ddd;
 }
 
-.manage_book {
-    float: right;
+#manage_book{
+	margin-left: 100px;
 }
